@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!-- <script>
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 10 + 'px';
+    </script> -->
+    <style>
+        .clearfix:after, .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+        }
+        .winer-name-box{
+        position: fixed;
+        top: 142px;
+        left: 0;
+        width: 100%;
+        overflow-x: hidden;
+        }
+        .winer-list-ul{
+        width: 2930px;
+        }
+        .winer-list-li{
+        float: left;
+        width: 536px;
+        overflow: hidden; /*自动隐藏文字*/
+        text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+        white-space: nowrap;/*强制不换行*/
+        line-height: 74px;
+        font-size: 32px;
+        color: #ffffff;
+        text-indent: 96px;
+        background: rgba(0, 0, 0, 0.5) url("./user.png") no-repeat 20px center;
+        background-size: 60px 60px;
+        padding-right: 24px;
+        border-radius: 100px;
+        box-sizing: border-box;
+        margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="winer-name-box">
+        <div class="winer-list-ul clearfix">
+            <span class="winer-list-li">恭喜海绵宝宝获得现金大礼包金大礼包金大礼包</span>
+            <span class="winer-list-li">恭喜海绵宝宝获得现金大礼包</span>
+            <span class="winer-list-li">恭喜海绵宝宝获得现金大礼包</span>
+            <span class="winer-list-li">恭喜海绵宝宝获得现金大礼包金大礼包金大礼包</span>
+            <span class="winer-list-li">恭喜海绵宝宝获得现金大礼包</span>
+        </div>
+    </div>
+    <script src="http://wangyongjie.top/cdn/js/jquery.min.js"></script>
+    <script>
+        // 
+        // 动画时长=1200*元素个数
+        winerAnimation()
+        function winerAnimation() {
+            $('.winer-list-ul').animate({
+                'marginLeft': -(586 * 5 - 422 - 750)
+            }, 6000, 'linear', function () {
+                $('.winer-list-ul').css({
+                    marginLeft: 0
+                })
+                winerAnimation()
+                var timerId = setInterval(function () {
+                    winerAnimation()
+                }, 6000)
+                clearInterval(timerId)
+            });
+        }
+    </script>
+</body>
+</html>
